@@ -23,8 +23,9 @@ If you use the profile method you should only have to run this single command to
 
 ```> profileesxi.ps1```
 
-And enter the arguments interactively.                                                                                                                                                                                                          Alternatively you can use:                                                                                                                                                                                                                      ```> vibesxi.ps1 -viserver [esxi server] -viburl [url to the vib]```
- 
+And enter the arguments interactively. Alternatively you can use:
+
+```> profileesxi.ps1 -viserver [esxi server] -profile [profile name] -depot [url to depot]```
 
 ## Note
 
