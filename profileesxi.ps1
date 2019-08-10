@@ -1,11 +1,27 @@
-# eosxi.ps1
-# PS script to run on single ESXi host to patch update via profile method and to reboot
-# Info for patching in this manner is at https://esxi-patches.v-front.de/
+<#
 
+.SYNOPSIS
+This is a powershell script for patching a ESXi host via profile and depot URL.
+
+.DESCRIPTION
+The script will install a series of patches on a single esxi host, given a profile and a depot url. Addtionally it will reboot the host if needed.
+
+.EXAMPLE
+./profileesxi.ps1 -viserver [ESXi server] -profile [profile name] -depot [url to depot]
+
+.NOTES
+Tested on Windows 10 PS 5.1, and Powershell Core 6 on Linux. Additionally requires Vmware Powercli, tested on version 11.3.
+
+See VMware Patch Tracker for URLS: https://esxi-patches.v-front.de/
+
+.LINK
+Repo: https://github.com/chaojareon/patchesxi
+Issues: https://github.com/chaojareon/patchesxi/issues
+
+#>
 param (
   [Parameter(Mandatory=$true)][string]$viserver,
   [Parameter(Mandatory=$true)][string]$profile,
-  # depot is typically https://hostupdate.vmware.com/software/VUM/PRODUCTION/main/vmw-depot-index.xml
   [Parameter(Mandatory=$true)][string]$depot
 )
 
